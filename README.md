@@ -12,41 +12,41 @@ We used the Bird Dataset provided by the bird competition from [Kagggle](https:/
 
 Some of the code is taken from the tutorials shown in class, i.e. importing packages needed and mounting google drive onto the collab notebook. 
 
-Classification model used: [ResNet](https://pytorch.org/hub/pytorch_vision_resnet/), [AlexNet](https://pytorch.org/hub/pytorch_vision_alexnet/), [DenseNet](https://pytorch.org/hub/pytorch_vision_densenet/), [SqueezeNet](https://pytorch.org/hub/pytorch_vision_squeezenet/)
+Classification model used: [ResNet](https://pytorch.org/hub/pytorch_vision_resnet/), [AlexNet](https://pytorch.org/hub/pytorch_vision_alexnet/), 
+[DenseNet](https://pytorch.org/hub/pytorch_vision_densenet/), [SqueezeNet](https://pytorch.org/hub/pytorch_vision_squeezenet/),
+[ResNeXt](https://pytorch.org/hub/pytorch_vision_resnext/)
 
 We used four different ResNet models each with varying amounts of convolutional layers (18, 50, 101, and 152 layers).
 AlexNet is expensive to compute, however it was made possible using convolutional neural networks in parallel, thus resulting in high performance. 
 DenseNet (Dense Convolutional Network) connect layers together in a feed-forward manner, unlike traditional convolutional networks.
 SqueezeNet achieves high accuracy while using 50 times less parameters. 
 The difference between SqueezeNet1_0 and SqueezeNet1_1 is that the latter one uses even less parameters and has 2.4 times fewer computations, while still preserving the accuracy.
+
 ## Results
-Below are graphs of losses vs num. of images seen for each of the different models.
+Below are graphs of <strong>losses</strong> vs n<strong>um. of image sseen</strong>  for each of the different models.
 We ran the predictions of multiple different models and even tried changing the image size and batch size for a few of the models.
 #### Resnet18
-Accuracy: 65.1%
+<strong>Accuracy</strong>: 65.1%
 
 ![image info](resnet18.JPG)
 
 #### Resnet50
-Accuracy: 56.3%
+<strong>Accuracy</strong>: 56.3%
 
 ![image info](resnet50.JPG)
 
-#### Resnet101
-Accuracy: 72.5%
-
-Smaller batch size, from 128 to 32, this increased the number of images seen during training, from 1400 in the previous 2 models, to 8000 in this model
-
-![image info](resnet101.JPG)
 
 #### Resnet152
+<strong>Accuracy</strong>: 58.5%
+
 ![img.png](resnet152.JPG)
 
-#### Alexnet
-![img.png](alexnet.JPG)
 
 #### Densenet161
 ![img.png](densenet.JPG)
+
+#### Alexnet
+![img.png](alexnet.JPG)
 
 #### Squeezenet1_0
 Shown up until checkpoint 6
@@ -58,3 +58,50 @@ Smaller image size, from 128 to 32, this increased loss compared to having image
 to gather enough information from such a small crop.
 
 ![img.png](squeeze1_1.JPG)
+
+### ResneXt101
+We compared 3 different learning rate (0.001, 0.0001, 0.00001) to determine which rate would result in a higher accuracy.
+
+
+<strong>Learning Rate: 0.001 </strong></br>
+<strong>Accuracy</strong>: 72.5%
+
+Smaller batch size, from 128 to 32, this increased the number of images seen during training, from 1400 in the previous 2 models, to 8000 in this model
+
+![image info](resnet101.JPG)
+<strong>Learning Rate: 0.00001 </strong></br>
+<strong>Accuracy</strong>:
+
+![image info](0.0001.JPG)
+
+<strong>Learning Rate: 0.00001 </strong></br>
+<strong>Accuracy</strong>: 
+
+![image info](0.00001.JPG)
+
+## Discussion
+
+####What worked well and didn’t and why?
+
+We constantly ran out of memory in CUDA. To fix this we either configured our settings to use less data, reset our 
+cache/network variable, or refreshed our connection and redownloaded all of training/testing data again.
+
+Our gpu limit would be reached and we would have to create a new gmail account to obtain more time.
+
+We would lose connection while running the model and have to restart the process over again.
+
+The disk would get full so couldn't upload the training/test data onto the drive so we had to redownload the data everytime we connnected
+
+We ran into KeyError 749 and 784 when trying to obtain the prediction csv file for a few of the models
+
+We also ran into entry sizing errors while trying to obtain prediction csv file
+
+
+We were able to configure a model so that it performed 12% better than the baseline results from class.
+
+
+From the results, we learned that having more layers for the ResNet model does not mean that it wil perform better. 
+We can see that there's an increase in accuracy when we used resnet101 instead of resnet50, but when resnet152 is used, the accuracy decreased.
+
+
+We also were able to explore different models that better worked for our particular dataset.
