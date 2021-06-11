@@ -14,7 +14,7 @@ Classification model used: [ResNet](https://pytorch.org/hub/pytorch_vision_resne
 [DenseNet](https://pytorch.org/hub/pytorch_vision_densenet/), [SqueezeNet](https://pytorch.org/hub/pytorch_vision_squeezenet/),
 [ResNeXt](https://pytorch.org/hub/pytorch_vision_resnext/)
 
-We used four different ResNet models each with varying amounts of convolutional layers (18, 50, 101, and 152 layers). 
+We used four different ResNet models each with varying amounts of convolutional layers (18, 50, and 152 layers). 
 ResNeXt is a more efficient and accurate model of ResNet.
 AlexNet is expensive to compute, however it was made possible using convolutional neural networks in parallel, thus resulting in high performance. 
 DenseNet (Dense Convolutional Network) connect layers together in a feed-forward manner, unlike traditional convolutional networks.
@@ -22,7 +22,7 @@ SqueezeNet achieves high accuracy while using 50 times less parameters.
 The difference between SqueezeNet1_0 and SqueezeNet1_1 is that the latter one uses even less parameters and has 2.4 times fewer computations, while still preserving the accuracy.
 
 ## Results
-Below are graphs of <strong>losses</strong> vs n<strong>um. of image sseen</strong>  for each of the different models.
+Below are graphs of <strong>losses</strong> vs <strong>num. of image sseen</strong> for each of the different models.
 We ran the predictions of multiple different models and even tried changing the image size and batch size for a few of the models.
 #### Resnet18
 <strong>Accuracy</strong>: 65.1%
@@ -40,7 +40,7 @@ We ran the predictions of multiple different models and even tried changing the 
 
 ![img.png](resnet152.JPG)
 
-From the results, we learned that having more layers for the ResNet model does not mean that it wil perform better.
+From the results, we learned that having more layers for the ResNet model does not mean that it will perform better.
 We can see that there's a decrease in accuracy as we increase the number of layers, from 18 to 50 to 152.
 
 #### Densenet161
@@ -62,7 +62,7 @@ to gather enough information from such a small crop.
 
 ### ResNeXt101
 
-###Experiment 1
+### Experiment 1
 We compared 3 different learning rate (0.001, 0.0001, 0.00001) to determine which rate would result in higher accuracy
 
 
@@ -83,10 +83,10 @@ Smaller batch size, from 128 to 32, this increased the number of images seen dur
 
 ![image info](0.00001.JPG)
 
-We can see that for this model, decreasing the learning rate decreases the loss rate, but it also decreases the accuracy.
-This is because the model overfitted the data during. The accuracy decreased from 72.5% to 0.1%.
+We can see that for this model, decreasing the learning rate decreases the loss rate, which we thought was good, but it actually decreases the accuracy.
+This is because the model overfitted the data. The accuracy decreased from 72.5% to 0.1%.
 
-###Experiment 2
+### Experiment 2
 We compared 3 different decay rates (0.25, 0.001, 0.00005) to determine which rate would result in higher accuracy
 
 <strong>Decay Rate: 0.0005 </strong></br>
