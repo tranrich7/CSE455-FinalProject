@@ -1,5 +1,9 @@
 # CSE455 - Final Project
 
+By: Krystal Vo - krystv
+
+Richard Tran - tranr7
+
 ## Problem Description
 Bird identification has been a problem plaguing bird watching ethusiasts since the beginning of time. With the myriad of species out in the wilderness it feels near impossible to precisely
 verify every bird from memory. With recent advancements in technology the past couple decades this problem will hopefully now be alleviated with the combination of a modern high megapixel camera
