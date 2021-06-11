@@ -31,12 +31,12 @@ We ran the predictions of multiple different models and even tried changing the 
 #### Resnet18
 <strong>Accuracy</strong>: 65.1%
 
-![image info](resnet18.JPG)
+![image info](/Images/resnet18.JPG)
 
 #### Resnet50
 <strong>Accuracy</strong>: 56.3%
 
-![image info](resnet50.JPG)
+![image info](/Images/resnet50.JPG)
 
 
 #### Resnet152
