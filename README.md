@@ -14,7 +14,8 @@ Classification model used: [ResNet](https://pytorch.org/hub/pytorch_vision_resne
 [DenseNet](https://pytorch.org/hub/pytorch_vision_densenet/), [SqueezeNet](https://pytorch.org/hub/pytorch_vision_squeezenet/),
 [ResNeXt](https://pytorch.org/hub/pytorch_vision_resnext/)
 
-We used four different ResNet models each with varying amounts of convolutional layers (18, 50, 101, and 152 layers).
+We used four different ResNet models each with varying amounts of convolutional layers (18, 50, 101, and 152 layers). 
+ResNeXt is a more efficient and accurate model of ResNet.
 AlexNet is expensive to compute, however it was made possible using convolutional neural networks in parallel, thus resulting in high performance. 
 DenseNet (Dense Convolutional Network) connect layers together in a feed-forward manner, unlike traditional convolutional networks.
 SqueezeNet achieves high accuracy while using 50 times less parameters. 
